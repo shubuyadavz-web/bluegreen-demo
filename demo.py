@@ -16,7 +16,7 @@ import time
 
 from app import HERE, MANIFEST, load_manifest, make_router, make_server
 
-ROUTER_PORT = 8080
+ROUTER_PORT = 8081
 DEPLOYED = os.path.join(HERE, ".deployed", "deploy.json")
 SHOP_TRAFFIC = ["/checkout?items=2&user=asha"] * 3 + ["/checkout?items=2"] * 3
 
