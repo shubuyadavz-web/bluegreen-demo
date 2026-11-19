@@ -37,3 +37,12 @@ def test_every_environment_passes_the_smoke_test():
         finally:
             server.shutdown()
             server.server_close()
+
+
+def test_express_checkout_is_off_by_default():
+    assert checkout(2, user="asha") == {"total": 200}
+
+
+def test_express_checkout_saves_the_card():
+    order = checkout(2, user="asha", express=True)
+    assert order == {"total": 200, "saved_card": "card-ending-4242"}
